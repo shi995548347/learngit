@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/react.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/react-dom.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	</body>
+	<script type="text/jsx" src="component/life.js">
+		
+	</script>
+	<script type="text/javascript" >
+		/* react js 生命周期：定义一个组件从开始到结束所经历的一些过程
+		 * 三个阶段：声明开始mounted、运行中update、销毁unmount
+		 * 
+		 * 钩子函数：指的是容器只要发生改变，系统就会立马通知一些函数去进行处理（钩子函数）
+		 * 声明一个jsx---->变成页面上面真实的dom节点的时候
+		 * 在mounted阶段有很多钩子函数被使用，5个钩子函数去使用
+		 * getDefauleProps：function(){}
+		 * getInitialState:function(){}
+		 * //渲染之前
+		 * componentWillMount:function(){}
+		 * 		发送ajax
+		 * //正在渲染
+		 * render：function(){}
+		 * //渲染之后
+		 * componentDidMount:function(){}
+		 * //jquery，swiper，document操作真实dom
+		 */ 
+		
+		
+		/* *****
+		 * 在组件运行中（update阶段）执行，组件的状态被修改，组件属性被父组件给修改，就会执行更新中声明周期函数
+		 * 更新中声明周期函数以update作为关键字，二次渲染的时候触发
+		 * 1、componentWillReceiceProps	      组件即将接收到最新属性
+		 * 2、shouldComponentUpdate			组件是否更新，返回true或false，优化reactjs性能通过条件判断，让组件按照指定的数据去重新渲染
+		 * 3、componentWillupdate			打印日志
+		 * 4、render						渲染
+		 * 5、componentDidUpdate			二次更新完毕之后，执行（操作最新dom）
+		 * *****/
+	</script>
+</html>

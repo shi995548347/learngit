@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="lib/react.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/react-dom.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+		</style>
+	</head>
+	<body>
+	<!--
+		<div id="header"></div>
+		<div id="list"></div>
+		<div id="footer"></div>
+	-->
+	</body>
+	<script src="component/ReactComponent.js" type="text/jsx" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.documentElement.style.fontSize=
+		    document.documentElement.clientWidth/6.4+'px';
+		    //通过resize事件 监听当前窗口大小变化
+		    window.addEventListener("resize",function(){
+		   	    document.documentElement.style.fontSize=
+		        document.documentElement.clientWidth/6.4+'px';
+		   })
+		   
+	</script>
+</html>

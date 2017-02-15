@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>react属性</title>
+		<script src="lib/react.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/react-dom.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		/* 1、数据传递的载体？
+		 * 承载数据变量---数据传递载体
+		 * 2、为什么要使用属性进行数据传递？
+		 * 属性是在组件外部去声明的，声明之后传入组件（组件内部能否修改属性？不可以）
+		 * 组件外部（父组件）可以改变（子组件）属性值
+		 * 目的：为了实现数据从model到view绑定的单向数据流
+		 * 3、如何声明和传递一个属性？
+		 * 	 i、key-value
+		 * 	ii、key-value拓展[]、{}
+		 * iii、{...对象（数据）}
+		 */
+	</script>
+	<script type="text/jsx">
+		//1、声明数据，作为属性传递到组件内部
+		var name = "snn";
+		var arr =["img/pic8.jpg","Hello World"];//数组
+		var _obj = {img:'img/pic8.jpg',desc:'hahahaha'}
+		var styles = {
+					div:{width:'800px',height:'400px',display:'flex'},
+					img:{width:'400px',height:'100px'},
+					con:{width:'100px',height:'50px',color:'red'}
+					
+				};
+		//2、声明组件
+		var Comp = React.createClass({
+			getDefaultProps:function(){
+				//如何声明属性 在该方法里面返回一个对象即可,组件内部都是高内聚的
+				return {
+					list:'XXXXXXX',
+					src:'wodetianna'
+				}
+			},
+			render:function(){
+				console.log(this.props);
+				//公共变量title 提取出来
+				//var _props = this.props.title;
+				var _props = this.props;
+				return(
+					<div style={styles.div}>
+						<div style={styles.con}>{_props[1]}</div>
+						<img src={_props[0]} style={styles.img}  />
+						<div>{_props.desc}</div>
+						<img src={_props.img} style={styles.img} />
+						<div>{this.props.src}</div>
+						<span>{this.props.s}</span>
+					</div>
+				);
+			}
+		});
+		//3、渲染	如何将我们声明的数据作为属性传递给组件
+		//ReactDOM.render(<Comp s={name}/>,document.body)
+		//ReactDOM.render(<Comp title={_obj}/>,document.body);
+		ReactDOM.render(<Comp {..._obj}/>,document.body);
+		/* 	传递方式1：key value传值，声明变量之后，在渲染的时候将数据传递到组件内部<组件名称 key={值}/>
+					     获取值:this.props.key
+				方式2：key value传递拓展---传递数组，对象
+				方式3：前两种传值方式的局限性:声明时候通过属性key传值到组件内部，
+						只要在外部改变了key，内部无法获取值，内部对外部key要求很强
+			第三种传值方式：对我们声明一个对象，数组的时候全部传入到组件内部
+						var obj={}；
+						<组件名称 {...obj}/>三点展开式{...对象表达式}，通过this.props获取
+			第四种：在组件内部声明，通过react的一个函数进行声明的
+					getDefaultProps：react组件生命周期函数,通过this.props获取
+				在组件内部属性值不允许修改
+		 */
+	</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			/*1.导入并引入框架lib
+				先后顺序:react.min.js(核心库,核心算法(diff),虚拟dom模型)
+				react-dom.min.js(放的是渲染对象)
+				react开发创建的都是组件,渲染
+				browser.min.js(对jsx语法解释库)
+				将jsx解释成原生js执行
+			2.创建组件,组件内部通过jsx语法去写html
+			3.渲染
+			4.测试*/
+		</script>
+		<script src="lib/react.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/react-dom.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/browser.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+	</body>
+	<!--
+		jsx----html
+			text/jsx,转译工具，不使用browser.min.js
+			JSXTransform.min.js
+			
+			1.3+    text/babel
+			
+	-->
+
+	<script type="text/babel">
+		//1.创建组件方法 createClass({对象})
+		//2.要在对象里面 实现render方法
+		//3.在render方法里面 通过return返回jsx(jsx写组件，html语法)
+		
+	    var MyComponent=React.createClass({
+			render:function(){
+				//定义一个变量
+				var desc="这是描述";
+				return  <div id="container">
+						<span className="myname">this is span</span> 
+						<span>{desc}</span>
+				        </div>
+			}
+		});
+		
+		//4.渲染 ReactDOM.render(<组件名称/>,组件渲染到页面那个位置)
+		ReactDOM.render(<MyComponent/>,document.body);
+		//注意事项:
+	
+		//1.同时往一个元素里面渲染组件会后一个覆盖前一个
+		
+		//2.组件命名首字母一定要大写
+		
+		//3.渲染组件时候 
+		//ReactDOM.render(<MyComponent/>,document.body);
+		//ReactDOM.render(<MyComponent></MyComponent>,document.body);
+		
+		//4.jsx语法   JavaScript xml
+		//只有一个开始和结束节点的结构
+		//开始和结束节点中间,可以任意嵌套，react里面使用jsx写html
+		
+		//5.jsx去写class时候，为了生效要把class写成 className="值"
+		//引入外部css方式，react组件只充当创建html过程
+		
+		//6.facebook官方 提倡我们将css,js,
+		//html全部整合在jsx中(组件里面)
+		
+
+	</script>
+</html>
