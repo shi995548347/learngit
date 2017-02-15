@@ -1,0 +1,11 @@
+*{font-family:"Microsoft YaHei","Microsoft JhengHei","Meiryo","Malgun Gothic","Arial";color:var(--LIGHT0);}
+html,body,#map{width:100%;height:100%;margin:0;padding:0;}
+.leaflet-popup {color: white;}
+.leaflet-popup .leaflet-popup-tip,.leaflet-popup .leaflet-popup-content-wrapper {background-color: rgba(80, 80, 80, 0.9);}
+.leaflet-popup.alert .leaflet-popup-tip,.leaflet-popup.alert .leaflet-popup-content-wrapper{background-color: rgba(201, 31, 44, 0.9);}
+.leaflet-popup-content{margin:20px;}
+.leaflet-popup-content img{width:100%;min-width:150px;}
+.DeviceRunning {color: #00ff00}
+.DeviceVital {color: #ff6666;}
+.DeviceIdle {color: #00bff3;}  
+.DeviceAlarmed {color: #fbb03b;}

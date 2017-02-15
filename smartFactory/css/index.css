@@ -1,0 +1,28 @@
+*{font-family:"Microsoft YaHei","Microsoft JhengHei","Meiryo","Malgun Gothic","Arial";color:var(--LIGHT0);}
+html,body{width:100%;height:100%;margin:0;padding:0;background:#333;color:#ccc;}
+body{background-image:linear-gradient(#333,#666);}
+#info{position:fixed;width:100%;height:100%;}
+#logo{width:370px;height:60px;padding:0 12px;background:url(images/logo.svg) no-repeat left top;}
+#copyright{font-size:12px;margin:-5px 0 0 0;}
+#bg,#box,#content{position:fixed;display:flex;width:100%;height:100%;justify-content:center;align-items:center;font-size:0;}
+#line,#gear{display:inline-block;}
+#box>div{}
+#bg{opacity:.3;z-index:0;width:100%;height:0;padding-top:100%;background:url(images/gear_line.svg) no-repeat center / 100%;}
+#gear{width:500px;height:500px;background:url(images/gear.png) no-repeat center /cover;}
+#content>*{z-index:2;display:inline-block;vertical-align:middle;}
+input{width:300px;height:50px;margin:0 2px;padding:5px;background:rgba(0,0,0,.8);border:1px solid rgba(128,128,128,.9);color:#ccc;font-size:24px;}
+button{width:50px;height:50px;padding:5px;background:none;margin-left:-55px;border:none;animation: hide 2s linear;}
+button:before{content:'›';color:#ccc;font-size:48px;line-height:24px;}
+button:before:hover{color:fbb03b;}
+button:focus{outline:none;}
+#gear{animation: spin 6s infinite linear;}
+#bg{animation: spin 60s infinite linear,hue 5s infinite linear,zoom 2s linear;}
+input{box-shadow:0 0 10px 0 rgba(0,0,0,.7); }
+input.animation{animation: span 2s linear;}
+input.shake{animation: shake 1.5s linear;border-color:#fbb03b;}
+@keyframes zoom {0% {transform: scale(1.5) rotate(0deg);opacity:0;}100% {transform: scale(1) rotate(359deg);opacity:.3;}}
+@keyframes spin {0% {transform: rotate(0deg);}100% {transform: rotate(359deg);}}
+@keyframes span {0% {width:0;}100% {width:300px;}}
+@keyframes hide {0% {visibility:hidden;opacity:0;}100% {visibility:visible;opacity:1;}}
+@keyframes hue {0% {filter: hue-rotate(0deg);}100% {filter: hue-rotate(359deg);}}
+@keyframes shake {0%,100% {-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0)}10%,30%,50%,70%,90% {-webkit-transform: translate3d(-10px, 0, 0);transform: translate3d(-10px, 0, 0)}20%,40%,60%,80% {-webkit-transform: translate3d(10px, 0, 0);transform: translate3d(10px, 0, 0)}}

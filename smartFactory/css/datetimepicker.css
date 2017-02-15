@@ -1,0 +1,13 @@
+.datetimepicker{display:none;box-shadow:0 0 15px 0 rgba(0,0,0,.7);background:#333;border:1px solid #444;padding:33px;position:absolute;z-index:9999999;cursor:pointer;color:#ccc;}
+.datetimepicker .sibling{color:#888;}
+.datetimepicker .today{color:#000;background:#09c;}
+.datetimepicker tbody td:hover{background:#111;color:#eee;}
+.datetimepicker .selected{background:#fbb03b;color:#000;}
+.datetimepicker input{width:4em;padding:0 5px;background:#444;border:1px solid #222;color:#ccc;text-align:center;}
+.datetimepicker hr{border:none;border-top:1px solid #000;border-bottom:1px solid #444;}
+.datetimepicker button{background:#fbb03b;border:none;min-width:80px;}
+.datetimepicker button{background:#fbb03b;border:none;min-width:80px;margin:5px;}
+.datetimepicker_link input[type="checkbox"]{vertical-align:middle;width:50px;height:20px;background:var(--LIGHT5);border:none;border-left:25px solid var(--DARK3);border-radius:0;text-align:center;appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+.datetimepicker_link input[type="checkbox"]:checked{border:none;border-right:25px  solid var(--COLOR);}
+.datetimepicker_link input[type="checkbox"]:after{content:'off';}
+.datetimepicker_link input[type="checkbox"]:checked:after{content:'on';}

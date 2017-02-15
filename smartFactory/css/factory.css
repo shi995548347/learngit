@@ -1,0 +1,33 @@
+:root{
+	--VIEW1:rgba(60,60,60,.8);
+	--VIEW2:#555;
+	--DASHBOARD:rgba(0,0,0,.8);
+}
+#view{position:fixed;left:14px;top:14px;width:92px;height:82px;overflow:hidden;}
+#view:hover{width:300px;}
+#view>div{display:inline-block;width:80px;height:70px;padding:5px;background:var(--VIEW1);border:1px solid var(--VIEW2);text-align:center;}
+#view>div:hover{border-color:var(--COLOR);}
+#view>div>span{display:block;width:80px;height:50px;background-image:url(images/view.svg);background-repeat:no-repeat;}
+#3d>span{background-position:left top;}
+#list>span{background-position:center center;}
+#chart>span{background-position:right top;}
+#dashboard{position:fixed;left:14px;bottom:14px;width:auto;height:auto;}
+#dashboard>div{display:inline-block;vertical-align:bottom;width:175px;height:175px;margin:0;background:var(--VIEW1);border:1px solid var(--VIEW2);border-radius:150px;}
+#dashboard>div#energy{width:250px;height:250px;}
+#statistics{position:fixed;right:14px;bottom:14px;width:250px;height:auto;}
+#legend{width:auto;margin:auto;background:var(--VIEW1);border:1px solid var(--VIEW2);padding:1em;text-align:right;font-size:16px;}
+#legend>div:after{content:' ■';font-size:30px;line-height:12px;}
+#pie{width:250px;height:250px;}
+#left,#right{width:20px;height:40px;position:fixed;z-index:10;bottom:100px;background:var(--VIEW1);box-shadow:0 0 5px rgba(0,0,0,.5);font-size:40px;line-height:32px;}
+#left{left:0;text-align:left;border-radius:0 50px 50px 0;border-right:1px solid var(--VIEW2);border-bottom:1px solid var(--VIEW2);}
+#right{right:0;text-align:right;border-radius:50px 0 0 50px;border-left:1px solid var(--VIEW2);border-bottom:1px solid var(--VIEW2);}
+#left:after{content:'‹';}
+#right:after{content:'›';}
+#left.closed:after{content:'›';}
+#right.closed:after{content:'‹';}
+#left.closed + div,#right.closed + div{display:none;}
+#DeviceTotal{color:#fff;}
+#DeviceRunning{color:#0f0;}
+#DeviceIdle{color:#00bff3;}
+#DeviceAlarmed{color:#fbb03b;}
+#DeviceVital{color:#f00;}
