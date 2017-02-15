@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset = "UTF-8" />
+	<title>study</title>
+	<style>
+		body{margin:0;padding:0;}
+		#box{width:500px;height:600px;background:#999;margin:10px auto;overflow-y:scroll;}
+		#boxCon{width:400px;height:50px;border-radius:10px;background:#444;text-align:center;color:yellow;margin:5px auto;}
+		#btn{display:block;margin:0 auto;}	#textNo{width:300px;height:300px;background:yellow;position:absolute;right:0;left:0;bottom:0;top:0;margin:auto;display:none;}
+		#title{width:300px;height:20px;background:#333;}
+		#xx{float:right;height:19px;}
+		#con{width:250px;height:50px;}
+		#bg{width:100%;height:100%;position:fixed;top:0;background:#000;opacity:0.7;display:none;}
+		#sp{width:35px;height:40px;background:#7df;display:none;float:right;color:#777;font-size:14px;padding:10px 0 0 5px;}
+	</style>
+	<script>
+	window.onload = function(){
+		var box = document.getElementById("box");
+		var btn = document.getElementById("btn");
+		var textNo = document.getElementById("textNo");
+		var bg = document.getElementById("bg");
+		var tit = document.getElementById("title");
+		var sub = document.getElementById("sub");
+		var col = document.getElementById("col");
+		var con = document.getElementById("con");
+		var xx = document.getElementById("xx");
+		var sp = document.getElementById("sp");
+		btn.onclick = function(){
+			textNo.style.display = "block";
+			bg.style.display = "block";
+		}
+		tit.onmousedown = function(e){
+			var evt = e||event;
+			disX = evt.offsetX;
+			disY = evt.offsetY;
+			document.onmousemove = function(e){
+				var evt = e || event;
+				textNo.style.margin = 0;
+				textNo.style.left = evt.clientX -  disX + "px";
+				textNo.style.top = evt.clientY - disY + "px";
+ 			}
+		}
+		sub.onclick = function(){
+			var oCon = con.value;
+			var odiv = document.createElement("div");
+			odiv.id = "boxCon";//用id名可直接获取
+			
+			//判断是否超过10个字
+			if(oCon.length>10){
+				sp.style.display = "block";	
+				sp.innerHTML = "超过上限";
+			}else{
+				odiv.innerHTML = oCon;
+				box.appendChild(odiv);
+				textNo.style.display = "none";
+				bg.style.display = "none";
+				con.value = "";
+				sp.innerHTML = "";
+				sp.style.display = "none";	
+				odiv.scrollIntoView();
+			}
+		}
+		col.onclick = function(){
+			textNo.style.display = "none";
+			bg.style.display = "none";
+			con.value = "";
+			sp.innerHTML = "";
+			sp.style.display = "none";	
+		}
+		xx.onclick = function(){
+			textNo.style.display = "none";
+			bg.style.display = "none";
+			con.value = "";
+			sp.innerHTML = "";
+			sp.style.display = "none";	
+		}
+		tit.onmouseup = function(){
+			document.onmousemove = null;
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+		<div id="boxCon">开心点。。。</div>
+	</div>
+	<button id="btn">点击</button>
+	
+	<div id="bg"></div>
+	
+	<div id="textNo">
+		<div id="title">点击可拖动<button id="xx">X</button></div>
+		<br/>
+		留言内容：(不能超过10个字)
+		<textarea id="con"></textarea><div id="sp"></div>
+		<br/>
+		<button id="sub">提交</button><button id="col">取消</button>
+	</div>
+	
+</body>
+</html>
